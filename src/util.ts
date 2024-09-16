@@ -6,9 +6,10 @@ import type { Semver } from './types.js';
  * V1.2.3
  * 1.2.3
  * 1.2.3-suffix
+ * 1.2.3-suffix.0
  */
 export const parseSemver = (semver: string) => {
-  if (!semver.match(/^(v|V)?\d+\.\d+\.\d+(-\w+)?$/)) {
+  if (!semver.match(/^(v|V)?\d+\.\d+\.\d+(-\w+(?:\.\w+)*)?$/)) {
     throw new Error(`Invalid semver: ${semver}`);
   }
 
