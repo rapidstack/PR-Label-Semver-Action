@@ -28,6 +28,10 @@ const SemverCreateTestCases = [
     input: ['v1.2.3', 'patch', 'rc.abcdef0'],
     expected: { string: '1.2.4-rc.abcdef0', major: 1, minor: 2, patch: 4, suffix: 'rc.abcdef0' },
   },
+  {
+    input: ['v1.24.0-rc.0', 'patch'],
+    expected: { string: '1.24.1', major: 1, minor: 24, patch: 1 },
+  },
 ];
 
 describe('Utility Functions', () => {
