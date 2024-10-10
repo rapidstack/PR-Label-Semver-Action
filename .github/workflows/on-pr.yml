@@ -44,7 +44,7 @@ jobs:
 
       - name: Conditionally Alert on Diff
         if: ${{ failure() && steps.diff.conclusion == 'failure' }}
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         with:
           message: |
             Diff detected between workflow build and the current contents of `dist`. Commit a fresh build of the `dist` directory to resolve this issue.
